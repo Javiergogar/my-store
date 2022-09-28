@@ -1,5 +1,5 @@
 <h2>Products</h2> <!-- El let - of - es sobre lo que se itera el html -->
-<div *ngFor="let product of products">
+<div *ngFor="let product of products | async">
     <h3> <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]"> 
         <!-- en routerLink no se debe usar interpolacion y es lo que permite no volver a ir al servidor,
              si se usa href SI que se va al servidor por tanto usar routerLink -->

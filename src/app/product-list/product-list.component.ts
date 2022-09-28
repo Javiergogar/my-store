@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { products } from '../products';
+import { ProductService } from '../product.service';
+//import { products } from '../products';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -8,12 +10,18 @@ import { products } from '../products';
 })
 export class ProductListComponent implements OnInit {
 
-  products = products; /* El products de la Izq es el nombre de la propiedad de la clase, mientras que el
+  /*products = products; /* El products de la Izq es el nombre de la propiedad de la clase, mientras que el
                           de la derecha se refiere al products de la linea 2, no necesita this al importarse arriba
                           el usar this.products haria referencia al product de la Izq */
-  constructor() { }
+
+                  
+  constructor(private productService: ProductService) { }
+
+  products!: Observable<{ id: number, name: string ,price: number, description: string; }[]>;
+
 
   ngOnInit(): void {
+    this.products = this.productService.getProducts();
   }
   
   share() {
