@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -28,6 +29,7 @@ import { ShippingComponent } from './shipping/shipping.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([ 
       { path: '', component: ProductListComponent }, // En el router-outlet me genera el ProductListComponent
       { path: 'products/:productId',                 // En la direccion products/con un param(es un param por :)

@@ -3,7 +3,7 @@
         "id": 1,
         "name": "IPhone XL",
         "price": 799,
-        "description": "A large phone with one of the best screens"
+        "description": "A large phone with one of the best screens and we got it from a .json"
     },
     {
         "id": 2,
